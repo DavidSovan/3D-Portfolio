@@ -15,7 +15,7 @@ export default function Experience() {
   const ambLight = useRef();
 
   const { modelRotationY } = useControls('Model Adjustment', {
-    modelRotationY: { value: -Math.PI / 4, min: -Math.PI, max: Math.PI, step: 0.01 }
+    modelRotationY: { value: -0.6853981633974483, min: -Math.PI, max: Math.PI, step: 0.01 }
   });
 
   // Model normalization
