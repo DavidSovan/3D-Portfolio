@@ -29,11 +29,11 @@ export default function CameraRig() {
     }),
     'WP 2: Botany Table (25%)': folder({
       wp2Pos: { value: { x: -2, y: -0.5, z: 3 }, step: 0.1 },
-      wp2Look: { value: { x: -9, y: -3, z: 14 }, step: 0.1 },
+      wp2Look: { value: { x: -9, y: -3, z: 13 }, step: 0.1 },
     }),
     'WP 3: The Pond (50%)': folder({
-      wp3Pos: { value: { x: 2, y: -0.5, z: 5 }, step: 0.1 },
-      wp3Look: { value: { x: 2, y: -0.5, z: -3 }, step: 0.1 },
+      wp3Pos: { value: { x: 2, y: -0.5, z: 3 }, step: 0.1 },
+      wp3Look: { value: { x: 1, y: -1.5, z: -13 }, step: 0.1 },
     }),
     'WP 4: Mangrove Tree (75%)': folder({
       wp4Pos: { value: { x: 0, y: 2.5, z: -17 }, step: 0.1 },
@@ -44,7 +44,7 @@ export default function CameraRig() {
       wp5Look: { value: { x: 0, y: 0.5, z: 0 }, step: 0.1 },
     }),
     parallaxStrength: { value: 0.6, min: 0, max: 2, step: 0.1 },
-    verticalFramingOffset: { value: -1.4, min: -5, max: 5, step: 0.1, label: 'Vertical Framing (LookAt Y)' },
+    verticalFramingOffset: { value: 1.2, min: -5, max: 5, step: 0.1, label: 'Vertical Framing (LookAt Y)' },
   });
 
   // --- CURVES & TARGETS ---
