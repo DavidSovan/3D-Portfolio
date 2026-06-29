@@ -25,7 +25,8 @@ function ProjectDisplay({ position, projectData }) {
     }
     
     if (materialRef.current) {
-      const targetEmissive = hovered ? 0.8 : 0.2;
+      const breathe = Math.sin(state.clock.elapsedTime * 2) * 0.1 + 0.3;
+      const targetEmissive = hovered ? 0.8 : breathe;
       materialRef.current.emissiveIntensity = THREE.MathUtils.lerp(
         materialRef.current.emissiveIntensity, 
         targetEmissive, 
@@ -45,15 +46,15 @@ function ProjectDisplay({ position, projectData }) {
       <octahedronGeometry args={[0.4, 0]} />
       <meshStandardMaterial 
         ref={materialRef}
-        color="#60a5fa" 
-        emissive="#60a5fa"
+        color="#059669" 
+        emissive="#059669"
         emissiveIntensity={0.2}
         wireframe={!hovered}
       />
       {/* Small floating label so users know it's clickable */}
       {hovered && (
         <Html center position={[0, 0.6, 0]} style={{ pointerEvents: 'none' }}>
-          <div style={{ background: 'rgba(0,0,0,0.8)', color: '#60a5fa', padding: '4px 8px', borderRadius: '4px', fontSize: '12px', whiteSpace: 'nowrap', border: '1px solid #60a5fa' }}>
+          <div style={{ background: 'var(--background)', color: '#059669', padding: '4px 8px', borderRadius: '4px', fontSize: '12px', whiteSpace: 'nowrap', border: '1px solid #059669' }}>
             View Project
           </div>
         </Html>
@@ -79,8 +80,10 @@ function SkillPlant({ position, skillName }) {
     }
     
     if (materialRef.current) {
+      const breathe = Math.sin(state.clock.elapsedTime * 2) * 0.1 + 0.5;
       const targetOpacity = hovered ? 1.0 : 0.4;
       materialRef.current.opacity = THREE.MathUtils.lerp(materialRef.current.opacity, targetOpacity, delta * 5);
+      materialRef.current.emissiveIntensity = hovered ? 0.8 : breathe;
     }
   });
 
@@ -101,8 +104,8 @@ function SkillPlant({ position, skillName }) {
       <icosahedronGeometry args={[0.25, 1]} />
       <meshStandardMaterial 
         ref={materialRef}
-        color="#a3e635" 
-        emissive="#a3e635"
+        color="#34d399" 
+        emissive="#34d399"
         emissiveIntensity={0.5}
         transparent
         opacity={0.4}
@@ -110,7 +113,7 @@ function SkillPlant({ position, skillName }) {
       />
       {hovered && (
         <Html center position={[0, 0.5, 0]} style={{ pointerEvents: 'none', transition: 'all 0.2s' }}>
-          <div style={{ background: 'rgba(5, 8, 16, 0.9)', color: '#a3e635', padding: '8px 16px', borderRadius: '8px', fontSize: '14px', whiteSpace: 'nowrap', border: '1px solid #a3e635', boxShadow: '0 4px 12px rgba(163, 230, 53, 0.2)' }}>
+          <div style={{ background: 'var(--background)', color: '#34d399', padding: '8px 16px', borderRadius: '8px', fontSize: '14px', whiteSpace: 'nowrap', border: '1px solid #34d399', boxShadow: '0 4px 12px rgba(255, 157, 92, 0.2)' }}>
             {skillName}
           </div>
         </Html>

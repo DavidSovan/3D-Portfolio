@@ -20,8 +20,8 @@ export default function App() {
         gl={{ antialias: true, toneMappingExposure: 1.2 }}
         shadows
       >
-        <color attach="background" args={['#050810']} />
-        <fog attach="fog" args={['#050810', 30, 200]} />
+        <color attach="background" args={['#021a11']} />
+        <fog attach="fog" args={['#021a11', 30, 200]} />
         
         <Suspense fallback={null}>
           <ScrollControls pages={10} damping={0.25} maxSpeed={0.5}>
@@ -33,11 +33,11 @@ export default function App() {
         </Suspense>
       </Canvas>
       <Loader 
-        containerStyles={{ background: '#050810' }}
+        containerStyles={{ background: '#021a11' }}
         innerStyles={{ width: '300px', background: 'rgba(255,255,255,0.1)', height: '4px' }}
-        barStyles={{ background: '#4ade80', height: '100%' }}
+        barStyles={{ background: 'linear-gradient(90deg, #34d399, #059669)', height: '100%', transition: 'width 0.2s ease', animation: 'breathePulse 2.5s ease-in-out infinite' }}
         dataInterpolation={(p) => `Loading Ecosystem ${p.toFixed(0)}%`}
-        dataStyles={{ color: '#4ade80', fontSize: '20px', fontFamily: 'Outfit', fontWeight: 800, letterSpacing: '2px', textTransform: 'uppercase' }}
+        dataStyles={{ color: 'transparent', fontSize: '20px', fontFamily: 'Outfit', fontWeight: 800, letterSpacing: '2px', textTransform: 'uppercase', backgroundImage: 'linear-gradient(90deg, #34d399, #059669)', WebkitBackgroundClip: 'text', animation: 'breathePulse 2.5s ease-in-out infinite' }}
       />
     </>
   );
