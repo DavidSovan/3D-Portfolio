@@ -296,3 +296,71 @@ h2 {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Base properties moved from inline styles */
+.about-panel {
+  transform: translateX(-20vw);
+}
+
+.skills-title {
+  font-size: 4rem;
+}
+
+.projects-title {
+  font-size: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  
+  h2 {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  .about-panel {
+    transform: none;
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+  }
+
+  .skills-title {
+    font-size: 2.8rem;
+  }
+  
+  .projects-title {
+    font-size: 2.2rem;
+  }
+
+  .glass-panel {
+    padding: 2rem 1.5rem;
+  }
+  
+  .modal-content {
+    padding: 2.5rem 1.5rem 2rem;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+  }
+}
+

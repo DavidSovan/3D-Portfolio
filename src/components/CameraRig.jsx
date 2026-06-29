@@ -95,6 +95,11 @@ export default function CameraRig() {
     );
 
     state.camera.lookAt(currentLookAt);
+
+    // Adjust FOV for mobile to make the model appear smaller
+    const targetFov = state.size.width < 768 ? 65 : 45;
+    state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, targetFov, 0.1);
+    state.camera.updateProjectionMatrix();
   });
 
   if (!debugMode && !showPath) return null;

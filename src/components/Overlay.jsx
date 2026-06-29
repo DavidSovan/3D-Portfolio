@@ -12,14 +12,14 @@ export default function Overlay() {
         
         {/* 1. HERO (0-10%) */}
         <section style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '0', width: '100%' }}>
-          <h1 style={{ pointerEvents: 'auto' }}>David</h1>
+          <h1 className="hero-title" style={{ pointerEvents: 'auto' }}>David</h1>
           <p className="subtitle" style={{ pointerEvents: 'auto' }}>Full-Stack & Mobile Developer</p>
           <p className="breathe" style={{ marginTop: '2rem', color: 'var(--primary)', letterSpacing: '1px' }}>Scroll to explore</p>
         </section>
 
         {/* 3. ABOUT (25-40%) - Positioned at 300vh roughly */}
-        <section style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '250vh', width: '100%' }}>
-          <div className="glass-panel" style={{ pointerEvents: 'auto', transform: 'translateX(-20vw)' }}>
+        <section style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '250vh', width: '100%', padding: '0 1rem', boxSizing: 'border-box' }}>
+          <div className="glass-panel about-panel" style={{ pointerEvents: 'auto' }}>
             <h2>About me</h2>
             <p>Hi, I'm David, a software developer who enjoys using AI to turn ideas into real products.</p>
             <p>I build modern web and mobile applications with clean design, interactive experiences, and a focus on solving real-world problems.</p>
@@ -32,22 +32,22 @@ export default function Overlay() {
         </section>
 
         {/* 4. SKILLS (40-60%) */}
-        <section style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '450vh', width: '100%' }}>
-          <h2 style={{ pointerEvents: 'auto', fontSize: '4rem', filter: 'drop-shadow(0 0 20px var(--accent))' }}>Ecosystem</h2>
-          <p className="subtitle" style={{ pointerEvents: 'auto' }}>Interact with the glowing skill plants!</p>
+        <section style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '450vh', width: '100%', padding: '0 1rem', boxSizing: 'border-box' }}>
+          <h2 className="skills-title" style={{ pointerEvents: 'auto', filter: 'drop-shadow(0 0 20px var(--accent))' }}>Ecosystem</h2>
+          <p className="subtitle" style={{ pointerEvents: 'auto', textAlign: 'center' }}>Interact with the glowing skill plants!</p>
         </section>
 
         {/* 5. PROJECTS (60-80%) */}
-        <section style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '650vh', width: '100%' }}>
+        <section style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '650vh', width: '100%', padding: '0 1rem', boxSizing: 'border-box' }}>
           <div style={{ pointerEvents: 'none', textAlign: 'center' }}>
-            <h2 style={{ pointerEvents: 'auto', fontSize: '3rem', filter: 'drop-shadow(0 0 20px var(--primary))' }}>Projects Gallery</h2>
-            <p className="subtitle" style={{ pointerEvents: 'auto', color: 'var(--primary)' }}>Click the glowing orbs to view case studies</p>
+            <h2 className="projects-title" style={{ pointerEvents: 'auto', filter: 'drop-shadow(0 0 20px var(--primary))' }}>Projects Gallery</h2>
+            <p className="subtitle" style={{ pointerEvents: 'auto', color: 'var(--primary)', textAlign: 'center' }}>Click the glowing orbs to view case studies</p>
           </div>
         </section>
 
         {/* 7. CONTACT (90-100%) */}
-        <section style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '900vh', width: '100%' }}>
-          <div className="glass-panel" style={{ pointerEvents: 'auto', textAlign: 'center', background: 'var(--surface)', borderColor: 'var(--surface-border)' }}>
+        <section style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'absolute', top: '900vh', width: '100%', padding: '0 1rem', boxSizing: 'border-box' }}>
+          <div className="glass-panel contact-panel" style={{ pointerEvents: 'auto', textAlign: 'center', background: 'var(--surface)', borderColor: 'var(--surface-border)' }}>
             <h2 style={{ color: 'var(--accent)', filter: 'drop-shadow(0 0 10px var(--accent))' }}>Let's connect</h2>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.5' }}>Available for freelance opportunities and full-time software development roles.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', marginBottom: '2rem' }}>
@@ -82,7 +82,7 @@ export default function Overlay() {
             </p>
             
             <h4 style={{ marginBottom: '1rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '1px' }}>Technologies</h4>
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
+            <div className="tech-stack-container" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
               {activeProject.tech.map((t, idx) => (
                 <span key={idx} style={{ padding: '0.5rem 1rem', background: 'transparent', color: 'var(--primary)', borderRadius: '20px', fontSize: '0.9rem', border: '1px solid var(--primary)' }}>
                   {t}
@@ -90,7 +90,7 @@ export default function Overlay() {
               ))}
             </div>
 
-            <div style={{ display: 'flex', gap: '1.5rem' }}>
+            <div className="modal-actions" style={{ display: 'flex', gap: '1.5rem' }}>
               <a href="#" className="btn ghost-btn" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', borderColor: 'var(--accent)', color: 'var(--accent)', background: 'transparent' }}>
                 <Code size={18} /> View Source
               </a>
